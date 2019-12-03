@@ -1,0 +1,28 @@
+@import "../colors.scss";
+
+@mixin linkStyle {
+  color: $dark-grey-color;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: underline;
+  &.isCode {
+    text-decoration-color: #d94a91;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.noUnderline {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    svg {
+      color: $very-dark-grey-color;
+    }
+  }
+}

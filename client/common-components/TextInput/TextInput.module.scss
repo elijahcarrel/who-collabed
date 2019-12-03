@@ -1,0 +1,46 @@
+@import "../colors.scss";
+@import "../fonts.scss";
+
+.textInputContainer {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .textInput {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1.5em;
+    font-family: $body-font;
+    outline: none;
+    border-color: $grey-color;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1em;
+    padding: 0.1em 0.5em;
+    margin-bottom: 0;
+
+    // iPhones add extra styling. Remove this.
+    -webkit-appearance: none;
+
+    &.hasError {
+      border-color: $error-color;
+    }
+  }
+
+  .clearButton {
+
+  }
+
+  .helperText {
+    font-size: 0.8em;
+    color: $dark-grey-color;
+    text-align: left;
+    padding-left: 1em;
+    padding-top: 5px;
+    &.hasError {
+      color: $error-color;
+    }
+  }
+}

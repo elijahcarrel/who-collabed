@@ -1,0 +1,75 @@
+@import "../colors.scss";
+@import "../utils.scss";
+
+// TODO(ecarrel): there's gotta be a better way than these media queries...
+
+@mixin row-wrap {
+  flex-direction: row;
+}
+
+@mixin li-borders {
+  border-left: 1px solid $grey-color;
+
+  &:first-of-type {
+    border-left: none;
+    margin-left: 10px;
+    padding-left: 0;
+  }
+}
+
+.flexList {
+  position: relative;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 0;
+
+    @include respond-to(768px) {
+      &.wrapWide {
+        @include row-wrap;
+      }
+    }
+
+    @include respond-to(500px) {
+      &.wrapMedium {
+        @include row-wrap;
+      }
+    }
+
+    &.wrapNone {
+      @include row-wrap;
+    }
+
+    li {
+      flex-grow: 1;
+      flex-basis: auto;
+      padding: 0 1em;
+      border: none;
+      text-align: center;
+      margin: .25em 0;
+      list-style: none;
+
+
+      @include respond-to(768px) {
+        &.wrapWide {
+          @include li-borders;
+        }
+      }
+
+      @include respond-to(500px) {
+        &.wrapMedium {
+          @include li-borders;
+        }
+      }
+
+      &.wrapNone {
+        @include li-borders;
+      }
+    }
+  }
+}

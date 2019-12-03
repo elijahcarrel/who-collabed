@@ -1,0 +1,5 @@
+@import "./CommonLink.shared.scss";
+
+.link {
+  @include linkStyle;
+}

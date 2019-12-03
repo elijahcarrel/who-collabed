@@ -1,0 +1,36 @@
+{
+  "name": "who-collabed",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "next -p 4000",
+    "build": "next build",
+    "type-check": "tsc",
+    "lint": "tslint --project .",
+    "deploy": "now"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "next": "^9.0.5",
+    "node-sass": "^4.12.0",
+    "normalize-scss": "^7.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.8.0",
+    "react-spinners": "^0.6.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/next": "^8.0.6",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "tslint": "^5.19.0",
+    "tslint-react-hooks": "^2.2.1",
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.3"
+  },
+  "private": true
+}

@@ -1,0 +1,24 @@
+@import "../colors.scss";
+@import "../fonts.scss";
+
+.button {
+  background-color: $red-color;
+  color: $white-color;
+  font-family: $body-font;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.4em;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  border: none;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+  &:hover {
+    background-color: darken($red-color, 10%);
+  }
+}

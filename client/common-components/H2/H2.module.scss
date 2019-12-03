@@ -1,0 +1,9 @@
+@import "../utils";
+
+.h2 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+
+  @include headline-style()
+}

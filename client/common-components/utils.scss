@@ -1,0 +1,11 @@
+@import "./fonts";
+
+@mixin respond-to($width) {
+  @media only screen and (min-width: $width) { @content; }
+}
+
+@mixin headline-style {
+  font-family: $headline-font;
+  font-weight: 700;
+  font-style: italic;
+}
