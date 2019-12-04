@@ -18,7 +18,7 @@ export const ArtistSearchBox = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [options, setOptions] = useState<Artist[]>([]);
-  const loading = isOpen && options.length === 0;
+  const loading = isOpen && options.length === 0 && query.length > 0;
 
   useEffect(() => {
     let active = true;

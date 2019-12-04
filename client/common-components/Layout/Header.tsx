@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <H2>
-        who-collabed (very WIP)
+        whocollabed (very WIP)
       </H2>
     </div>
   );

@@ -9,7 +9,7 @@ const AboutPage: React.FC = () => {
     <Layout>
       <div className={styles.container}>
         <P className={styles.p}>
-          who-collabed was created by Katelyn Weingart and <CommonLink
+          whocollabed was created by Katelyn Weingart and <CommonLink
           href="https://elijahcarrel.me/" isExternal>Elijah Carrel</CommonLink>.
         </P>
       </div>
