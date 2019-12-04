@@ -1,9 +1,11 @@
+import { createMuiTheme } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
 import Head from "next/head";
 import React, { Fragment } from "react";
 import { LoadingOverlay } from "../LoadingOverlay/LoadingOverlay";
 import { Footer } from "./Footer";
+import { Header } from "./Header";
 import styles from "./Layout.module.scss";
-import {Header} from "./Header";
 
 interface Props {
   title?: string;
@@ -25,6 +27,19 @@ export const Layout: React.FC<Props> = (props: Props) => {
   const siteTitle = "Who Collabed";
   const displayTitle = title ? `${siteTitle} | ${title}` : siteTitle;
   const description = "Find out the shortest distance between two artists, through collaborations alone";
+
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        "Fira Sans",
+        "Roboto",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ].join(","),
+    },
+  });
+
   return (
     <Fragment>
       <Head>
@@ -39,29 +54,31 @@ export const Layout: React.FC<Props> = (props: Props) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
       </Head>
-      <div className={styles.bodyContainer}>
-        <div className={styles.body}>
-          <Header />
-          <div className={styles.content}>
-            {error ?
-              <Fragment>
-                <div className={styles.error}>{error}</div>
-                {errorAction}
-              </Fragment>
-                :
-              <Fragment>
-                {isLoading && <LoadingOverlay />}
-                {!isLoading && (
-                  <Fragment>
-                    {children}
-                  </Fragment>
-                )}
-              </Fragment>
-            }
+      <ThemeProvider theme={theme}>
+        <div className={styles.bodyContainer}>
+          <div className={styles.body}>
+            <Header />
+            <div className={styles.content}>
+              {error ?
+                <Fragment>
+                  <div className={styles.error}>{error}</div>
+                  {errorAction}
+                </Fragment>
+                  :
+                <Fragment>
+                  {isLoading && <LoadingOverlay />}
+                  {!isLoading && (
+                    <Fragment>
+                      {children}
+                    </Fragment>
+                  )}
+                </Fragment>
+              }
+            </div>
+            <Footer />
           </div>
-          <Footer />
         </div>
-      </div>
+      </ThemeProvider>
     </Fragment>
   );
 };

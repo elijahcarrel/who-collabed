@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { ParsedUrlQuery } from "querystring";
+import React, { useEffect, useState } from "react";
 import { CommonLink } from "../common-components/CommonLink/CommonLink";
 import { H3 } from "../common-components/H3/H3";
-import {ParsedUrlQuery} from "querystring";
 
 export const defaultErrorAction = (
   <H3><CommonLink href="/">Go back to the home page.</CommonLink></H3>

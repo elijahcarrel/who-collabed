@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { Fragment, ReactNode } from "react";
+import React, { ComponentProps, Fragment, ReactNode } from "react";
 import { CommonLink } from "../CommonLink/CommonLink";
 import styles from "./LinkList.module.scss";
 
@@ -15,13 +15,13 @@ interface Props {
     content: ReactNode;
     className?: string;
     onClick?: () => any;
-    linkProps?: Object;
+    linkProps?: Partial<ComponentProps<typeof CommonLink>>;
   }>;
   wrapWidth: "wide" | "medium" | "none";
 }
 
 export const LinkList = (props: Props) => {
-  const { classes = {}, elements, wrapWidth = "wide", } = props;
+  const { classes = {}, elements, wrapWidth = "wide" } = props;
   const wrapStyles = {
     none: styles.wrapNone,
     medium: styles.wrapMedium,
