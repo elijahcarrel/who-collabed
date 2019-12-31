@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import React, { useEffect, useState } from "react";
 import { Artist } from "../../api/artist";
-import { getMockArtists } from "../../api/mock/mock-api";
+import { getMockArtists } from "../../api/mock/mock-artist";
 
 interface Props {
   value: Artist;
@@ -50,26 +50,17 @@ export const ArtistSearchBox = (props: Props) => {
 
   return (
     <Autocomplete
-      id="asynchronous-demo"
       style={{ width: 300 }}
       open={isOpen}
-      onOpen={() => {
-        setIsOpen(true);
-      }}
-      onClose={() => {
-        setIsOpen(false);
-      }}
+      onOpen={() => setIsOpen(true)}
+      onClose={() => setIsOpen(false)}
       value={value}
       inputValue={query}
       getOptionLabel={(option: Artist) => option.name || ""}
       options={options}
       loading={loading}
-      onChange={(_, newValue: Artist) => {
-        onChange(newValue);
-      }}
-      onInputChange={(_, newQuery: string) => {
-        setQuery(newQuery);
-      }}
+      onChange={(_, newValue: Artist) => onChange(newValue)}
+      onInputChange={(_, newQuery: string) => setQuery(newQuery)}
       className={className}
       renderInput={(params) => (
         <TextField

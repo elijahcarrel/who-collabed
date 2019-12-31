@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 // @ts-ignore
-import PulseLoader from "react-spinners/PulseLoader";
+import ScaleLoader from "react-spinners/ScaleLoader";
 import styles from "./LoadingOverlay.module.scss";
 
 interface Props {
@@ -12,9 +12,11 @@ export const LoadingOverlay = (props: Props) => {
   const { className = "" } = props;
   return (
     <div className={classNames(className, styles.container)}>
-      <PulseLoader
-        sizeUnit="px"
-        size={30}
+      <ScaleLoader
+        height={40}
+        width={4}
+        radius={2}
+        margin="2px"
         color="#ece49e"
         loading={true}
         {...props}
